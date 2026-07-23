@@ -12,11 +12,34 @@
     {% set adminHtml %}
       {{ govukTag({ text: "Admin", classes: "govuk-tag--green" }) }}
     {% endset %}
+
+    {% set revokeInvite %}
+      <a href="revoke-invite" class="govuk-link">Revoke invite</a>
+    {% endset %}
     
     {% set membersHtml %}
     {{ govukButton({
       text: "Invite a member",
       href: "invite-member"
+    }) }}
+
+    {{ govukTable({
+      caption: "Invited members",
+      captionClasses: "govuk-table__caption--m",
+      head: [
+        {text: "Name"},
+        {text: "Email address"},
+        {text: "Status"},
+        {}
+      ],
+      rows: [
+        [
+          {text: "Kamal Singh"},
+          {text: "kamal-signh@example.org"},
+          {text: "Invite pending"},
+          {html: revokeInvite}
+        ]      
+      ]
     }) }}
 
     {{ govukTable({
@@ -65,12 +88,7 @@
                   href: "change-shared-space-name",
                   text: "Change name",
                   classes: "govuk-link--no-visited-state"
-                },
-                {
-                  href: "delete-shared-space",
-                  text: "Delete shared space",
-                  classes: "govuk-link--no-visited-state red-action"
-                }
+                }                
               ]
             }
           }

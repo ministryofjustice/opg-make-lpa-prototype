@@ -72,10 +72,18 @@
         ]
       }) }}
             
-      {{ govukButton({
-        text: "Save",
-        href: "manage-shared-space"
-      }) }}
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Save",
+          href: "manage-shared-space"
+        }) }}
+  
+        {{ govukButton({
+          text: "Delete user",
+          classes: "govuk-button--secondary",
+          href: "delete-leon-vynehall"
+        }) }}
+      </div>
     </div>
   </div>
 {% endblock %}
