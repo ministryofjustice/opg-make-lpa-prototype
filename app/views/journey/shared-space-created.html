@@ -1,0 +1,21 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Your shared space's name" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% call govukPanel({
+      titleText: "Shared space created"
+    }) %}
+    {% endcall %}
+    
+    {{ govukButton({
+      text: "Continue",
+      href: "shared-dashboard"
+    }) }}
+  </div>
+</div>
+
+{% endblock %}

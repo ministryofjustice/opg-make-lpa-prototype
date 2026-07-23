@@ -1,0 +1,29 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Delete shared space" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Manage shared space</span>
+      <h1 class="govuk-heading-xl">
+        {{ pageName }}
+      </h1>
+
+      <p>If you delete <strong>My shared space</strong> now, you and all members will immediately lose access to this shared space.</p>
+
+      <p>This includes:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>1 LPA that is still in progress</li>
+        <li>any completed LPAs made in this shared space</li>
+      </ul>
+      
+      {{ govukButton({
+        text: "Delete shared space",
+        href: "shared-space-deleted",
+        classes: "govuk-button--warning"
+      }) }}
+    </div>
+  </div>
+{% endblock %}

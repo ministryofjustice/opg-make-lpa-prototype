@@ -1,0 +1,43 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Cannot join shared space" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        {{ pageName }}
+      </h1>
+
+      <p>You cannot join the shared space because of one of these reasons:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the details were incorrect</li>
+        <li>the shared space no longer exists</li>
+        <li>the account is linked to another shared space</li>
+        <li>the invite has been cancelled</li>
+      </ul>
+      
+      <form method="post" action="/redirect">      
+        {{ govukRadios({
+          name: "redirect",
+          fieldset: {
+            legend: {
+              text: "Would you like to try again?",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {value: "shared-space-join", text: "Yes"},
+            {value: "dashboard", text: "No, continue to your Make account"}
+          ]
+        }) }}
+        
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

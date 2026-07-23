@@ -1,0 +1,63 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Invite a member to your shared space" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        {{ pageName }}
+      </h1>
+      
+      {{ govukInput({
+        classes: "govuk-input--width-20",
+        label: {
+          text: "First names"
+        },
+        hint: {
+          text: "Include any middle names."
+        }
+      }) }}
+
+      {{ govukInput({
+        classes: "govuk-input--width-20",
+        label: {
+          text: "Last name"
+        }
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Email address"
+        }
+      }) }}
+
+      {{ govukCheckboxes({
+        fieldset: {
+          legend: {
+            text: "Set their permissions",
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "All members can create and edit LPAs."
+        },
+        items: [
+          {
+            text: "Make this person an admin",
+            hint: {text: "Admins can manage members and change the shared space’s details."}
+          }
+        ]
+      }) }}
+
+      <p>You can change these permissions later.</p>
+
+      <p>When you select <strong>Send invite</strong>, we’ll send this person an email inviting them to join your shared space. They’ll have 48 hours to join.</p>
+      
+      {{ govukButton({
+        text: "Send invite",
+        href: "member-invite-email"
+      }) }}
+    </div>
+  </div>
+{% endblock %}

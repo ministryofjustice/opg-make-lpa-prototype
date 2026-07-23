@@ -1,0 +1,140 @@
+{% extends "layouts/signed-in-shared.html" %}
+
+{% set pageName="Manage your Shared Space" %}
+{% set navActive = "space" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">Manage your Shared Space</h1>
+
+    {% set adminHtml %}
+      {{ govukTag({ text: "Admin", classes: "govuk-tag--green" }) }}
+    {% endset %}
+    
+    {% set membersHtml %}
+    {{ govukButton({
+      text: "Invite a member",
+      href: "invite-member"
+    }) }}
+
+    {{ govukTable({
+      caption: "Members",
+      captionClasses: "govuk-table__caption--m",
+      head: [
+        {text: "Name"},
+        {},
+        {text: "Email address"},
+        {text: "Status"},
+        {text: "Last signed in"}
+      ],
+      rows: [
+        [
+          {html: "<a class=\"govuk-link--no-visited-state\" href=\"member-alice-moxom\">Alice Moxom</a> (you)"},
+          {html: adminHtml},
+          {text: "alice-moxom@example.org"},
+          {text: "Active"},
+          {text: "3:29pm 22 July 2026"}
+        ],
+        [
+          {html: "<a class=\"govuk-link--no-visited-state\" href=\"member-leon-vynehall\">Leon Vynehall</a>"},
+          {html: ""},
+          {text: "leon-vynehall@example.org"},
+          {text: "Active"},
+          {text: "11:15am 20 July 2026"}
+        ]
+      ]
+    }) }}
+    {% endset %}
+    
+    {% set detailsHtml %}      
+      {{ govukSummaryList({
+        classes: "shared-space-details",
+        rows: [
+          {
+            key: {
+              text: "My shared space"
+            },
+            value: {
+              html: ''
+            },
+            actions: {
+              items: [
+                {
+                  href: "change-shared-space-name",
+                  text: "Change name",
+                  classes: "govuk-link--no-visited-state"
+                },
+                {
+                  href: "delete-shared-space",
+                  text: "Delete shared space",
+                  classes: "govuk-link--no-visited-state red-action"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+    {% endset %}
+
+    {% set importHtml %}
+      <p>You can import LPAs from an existing Make account. The account entered will no longer have any LPAs, and will be deleted.</p>
+      
+      {{ govukInput({
+        classes: "govuk-input--width-20",
+        label: {
+          text: "Email address"
+        }
+      }) }}
+
+      {{ govukInput({
+        classes: "govuk-input--width-20",
+        label: {
+          text: "Password"
+        },
+        type: "password"
+      }) }}
+      <p style="margin-top: -1.5rem;">
+        <a href="#">Show password</a>
+      </p>
+      
+      {{ govukButton({
+        text: "Import",
+        href: "import-success"
+      }) }}
+
+      <p>
+        <a href="reset-password">Forgotten your password?</a>
+      </p>
+    {% endset %}
+    
+    {{ govukTabs({
+      classes: "tabs--no-border",
+      items: [
+        {
+          label: "Manage members",
+          id: "members",
+          panel: {
+            html: membersHtml
+          }
+        },
+        {
+          label: "Shared Space details",
+          id: "details",
+          panel: {
+            html: detailsHtml
+          }
+        },
+        {
+          label: "Import LPAs from existing account",
+          id: "import",
+          panel: {
+            html: importHtml
+          }
+        }
+      ]
+}) }}
+</div>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Link or create account" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      {{ pageName }}
+    </h1>
+
+    <p>
+      There is no Make account associated with this OneLogin account.
+      If you have used Make in the past you can link your existing account to see any LPAs that have been made in it.
+    </p>
+
+    <form method="post" action="/redirect">
+      {{ govukRadios({
+        name: "redirect",
+        fieldset: {
+          legend: {
+            text: "Do you want to link an existing Make account?",
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {value: "link-account", text: "Yes"},
+          {value: "do-you-want-a-shared-space", text: "No, create a Make account"}
+        ]
+      }) }}
+      
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
+
+{% endblock %}
