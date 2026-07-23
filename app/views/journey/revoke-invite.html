@@ -1,0 +1,30 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Revoke invite" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Manage members</span>
+      <h1 class="govuk-heading-xl">
+        Revoke invite
+      </h1>
+
+      <p>Are you sure you want to revoke the invite to <strong>kamal-signh@example.org</strong>?</p>
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Revoke",
+          classes: "govuk-button--warning",
+          href: "manage-shared-space"
+        }) }}
+
+        {{ govukButton({
+          text: "Cancel",
+          classes: "govuk-button--secondary",
+          href: "manage-shared-space"
+        }) }}
+      </div>
+    </div>
+  </div>
+{% endblock %}

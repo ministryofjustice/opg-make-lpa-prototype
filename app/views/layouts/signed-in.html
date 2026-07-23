@@ -3,9 +3,11 @@
 {% block govukServiceNavigation %}
   {{ govukServiceNavigation({
     serviceName: serviceName,
+    serviceUrl: "/",
     navigation: [
       {href: "#", text: "Your details"},
       {href: "#", text: "Your LPAs", active: true},
+      {href: "shared-spaces", text: "Shared spaces"},
       {href: "#", text: "Help"},
       {href: "#", text: "Sign Out"}
     ]

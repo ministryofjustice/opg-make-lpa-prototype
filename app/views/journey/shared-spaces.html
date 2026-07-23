@@ -1,0 +1,38 @@
+{% extends "layouts/signed-in.html" %}
+
+{% set pageName="Shared spaces" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      {{ pageName }}
+    </h1>
+
+    <p>A shared space allows you to draft LPAs with other people...</p>
+
+    <h2 class="govuk-heading-m">Create a shared space</h2>
+
+    <p>If you want to invite other people to draft LPAs with you, create a shared space.</p>
+
+    {{ govukButton({
+      text: "Create new shared space",
+      href: "name-the-space"
+    }) }}
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <h2 class="govuk-heading-m">Join a shared space</h2>
+
+    <p>If you received an email asking you to join a shared space, join it.</p>
+
+    {{ govukButton({
+      text: "Join a shared space",
+      href: "shared-space-join"
+    }) }}    
+    
+  </div>
+</div>
+
+{% endblock %}
