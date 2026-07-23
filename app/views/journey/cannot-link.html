@@ -1,0 +1,37 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Cannot link account to OneLogin" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        {{ pageName }}
+      </h1>
+
+      <p>The account you tried to link cannot be linked because either it does not exist or has already been linked to another account.</p>
+      
+      <form method="post" action="/redirect">      
+        {{ govukRadios({
+          name: "redirect",
+          fieldset: {
+            legend: {
+              text: "Would you like to try linking again?",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {value: "link-account", text: "Yes"},
+            {value: "do-you-want-a-shared-space", text: "No, create a Make account"}
+          ]
+        }) }}
+        
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

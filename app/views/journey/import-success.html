@@ -1,0 +1,21 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Your shared space's name" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% call govukPanel({
+        titleText: "52 LPAs imported"
+      }) %}
+      {% endcall %}
+
+      <p>The account has been successully deleted.</p>
+      
+      {{ govukButton({
+        text: "Continue",
+        href: "manage-shared-space#import"
+      }) }}
+    </div>
+  </div>
+{% endblock %}

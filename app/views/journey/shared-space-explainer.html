@@ -1,0 +1,44 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="What is a shared space" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        {{ pageName }}
+      </h1>
+
+      <p>You have been invited to join a shared space.</p>
+
+      <p>A shared space allows you to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Create LPAs with other members</li>
+        <li>Edit LPAs with other members</li>
+      </ul>
+
+      <p>But it means that every LPA you create with this account will be shared.</p>
+      
+      <form method="post" action="/redirect">      
+        {{ govukRadios({
+          name: "redirect",
+          fieldset: {
+            legend: {
+              text: "Would you like to join the shared space?",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {value: "shared-space-join", text: "Yes"},
+            {value: "dashboard", text: "No, I will work alone"}
+          ]
+        }) }}
+        
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

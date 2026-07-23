@@ -1,0 +1,9 @@
+{
+  "serviceName": "Make a lasting power of attorney",
+  "useServiceNavigation": true,
+  "plugins": {
+    "govuk-frontend": {
+      "rebrand": true
+    }
+  }
+}

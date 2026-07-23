@@ -1,0 +1,32 @@
+{% extends "layouts/signed-in.html" %}
+
+{% set pageName="Your LPAs" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Your LPAs</h1>
+
+    <p class="govuk-body-l">On this page you'll find all the LPAs that you've made. As well as making a new LPA from scratch, you can:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li><strong>continue making</strong> an LPA</li>
+      <li><strong>check the signing dates</strong> on an LPA are in the right order before you send it to OPG - if they're not, we cannot register the LPA and you may have to pay another application fee</li>
+      <li><strong>reuse details from an existing LPA to make a new one</strong> - you can do this once you've completed all sections up to and including the person to notify section</li>
+    </ul>
+
+    <div class="govuk-inset-text">
+      If you already have a registered LPA and want to use it online, go to the Use a lasting power of attorney service.
+    </div>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <div class="grey-panel">
+      <h3 class="govuk-heading-m">Make another LPA</h3>
+      {{ govukButton({ text: "Start now" }) }}
+      <p class="govuk-body-s"><strong>Or reuse the details of an LPA below</strong></p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

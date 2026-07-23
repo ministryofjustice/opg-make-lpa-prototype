@@ -1,0 +1,20 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Shared space deleted" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">
+        {{ pageName }}
+      </h1>
+
+      {% call govukNotificationBanner({
+        titleText: "Organisation deleted"
+      }) %}
+        <p>The shared space <strong>My shared space</strong> has been deleted. We have also sent you an email confirming this.</p>
+        <p>All members have now lost access to all LPAs made in this shared space.</p>
+      {% endcall %}
+    </div>
+  </div>
+{% endblock %}

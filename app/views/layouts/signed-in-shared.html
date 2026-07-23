@@ -1,0 +1,14 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block govukServiceNavigation %}
+  {{ govukServiceNavigation({
+    serviceName: serviceName,
+    navigation: [
+      {href: "#", text: "Your details"},
+      {href: "shared-dashboard", text: "Your LPAs", active: navActive === "lpas"},
+      {href: "manage-shared-space", text: "Manage your Shared Space", active: navActive === "space"},
+      {href: "#", text: "Help"},
+      {href: "#", text: "Sign Out"}
+    ]
+  }) }}
+{% endblock %}

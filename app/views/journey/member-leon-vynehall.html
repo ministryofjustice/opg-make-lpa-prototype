@@ -1,0 +1,81 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Edit team member" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Manage members</span>
+      <h1 class="govuk-heading-xl">
+        Leon Vynehall
+      </h1>
+      
+      {{ govukInput({
+        classes: "govuk-input--width-20",
+        label: {
+          text: "First names"
+        },
+        hint: {
+          text: "Include any middle names."
+        },
+        value: "Leon"
+      }) }}
+
+      {{ govukInput({
+        classes: "govuk-input--width-20",
+        label: {
+          text: "Last name"
+        },
+        value: "Vynehall"
+      }) }}
+
+      {{ govukCheckboxes({
+        name: "permissions",
+        fieldset: {
+          legend: {
+            text: "Permissions",
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "All members can create and edit LPAs."
+        },
+        items: [
+          {
+            text: "Admin",
+            hint: {text: "Admins can manage members and change the shared space’s details."}
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        name: "status",
+        fieldset: {
+          legend: {
+            text: "Status",
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "allow",
+            text: "Allow access to this shared space",
+            checked: true
+          },
+          {
+            value: "suspend",
+            text: "Suspend access to this shared space",
+            hint: {
+              text: "For example, for extend leave"
+            }
+          }
+        ]
+      }) }}
+            
+      {{ govukButton({
+        text: "Save",
+        href: "manage-shared-space"
+      }) }}
+    </div>
+  </div>
+{% endblock %}

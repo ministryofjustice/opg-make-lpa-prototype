@@ -1,0 +1,49 @@
+//
+// For guidance on how to add CSS and SCSS see:
+// https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
+// 
+
+// Add extra styles here
+.email-box {
+  border: 1px solid #b1b4b6;
+  padding: .5rem 1rem 1rem;
+  border-radius: .5rem;
+  max-width: 80ch;
+  margin: 0 auto;
+}
+
+.aside {
+  @extend .govuk-inset-text;
+  border-left-color: purple;
+}
+
+.grey-panel {
+  background: #dee0e2;
+  text-align: center;
+  padding: 1rem;
+}
+
+.tabs--no-border .govuk-tabs__panel {
+  border-right: none !important;
+  border-bottom: none !important;
+  border-left: none !important;
+  padding-left: 0;
+  padding-bottom: 0;
+  padding-right: 0;
+}
+
+.shared-space-details {
+  border-top: 1px solid govuk-functional-colour("border");
+
+  .govuk-summary-list__actions {
+    width: 40%;
+  }
+
+  .red-action {
+    color: govuk-functional-colour("error") !important;
+  }
+}
+
+.govuk-grid-column-full .govuk-notification-banner__content > * {
+  max-width: 100%;
+}
