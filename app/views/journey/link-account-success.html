@@ -1,0 +1,21 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Your shared space's name" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% call govukPanel({
+        titleText: "Make account linked"
+      }) %}
+      {% endcall %}
+
+      <p>You can now continue drafting the LPAs you made previously.</p>
+      
+      {{ govukButton({
+        text: "Continue",
+        href: "dashboard"
+      }) }}
+    </div>
+  </div>
+{% endblock %}
