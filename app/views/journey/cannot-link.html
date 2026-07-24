@@ -3,7 +3,6 @@
 {% set pageName="Cannot link account to OneLogin" %}
 
 {% block content %}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
@@ -11,8 +10,8 @@
       </h1>
 
       <p>The account you tried to link cannot be linked because either it does not exist or has already been linked to another account.</p>
-      
-      <form method="post" action="/redirect">      
+
+      <form method="post" action="/redirect">
         {{ govukRadios({
           name: "redirect",
           fieldset: {
@@ -26,12 +25,11 @@
             {value: "dashboard", text: "No, create a Make account"}
           ]
         }) }}
-        
+
         {{ govukButton({
           text: "Continue"
         }) }}
       </form>
     </div>
   </div>
-
 {% endblock %}

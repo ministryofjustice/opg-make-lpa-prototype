@@ -3,24 +3,22 @@
 {% set pageName="Your shared space's name" %}
 
 {% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukInput({
+        label: {
+          text: pageName,
+          classes: "govuk-label--l",
+          isPageHeading: true
+        },
+        id: "space-name",
+        name: "spaceName"
+      }) }}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    {{ govukInput({
-      label: {
-        text: pageName,
-        classes: "govuk-label--l",
-        isPageHeading: true
-      },
-      id: "space-name",
-      name: "spaceName"
-    }) }}
-          
-    {{ govukButton({
-      text: "Continue",
-      href: "shared-space-created"
-    }) }}
+      {{ govukButton({
+        text: "Continue",
+        href: "shared-space-created"
+      }) }}
+    </div>
   </div>
-</div>
-
 {% endblock %}

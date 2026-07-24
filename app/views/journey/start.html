@@ -3,83 +3,81 @@
 {% set pageName="Home" %}
 
 {% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">
+        Make, register or end a lasting power of attorney
+      </h1>
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-xl">
-      Make, register or end a lasting power of attorney
-    </h1>
-
-    <p style="font-size: 1rem; line-height: 1.7rem;">Contents<br>
-      — <a href="#">Overview</a><br>
-      — ...<br>
-      — Make a lasting power of attorney<br>
-      — ...
-    </p>
-  </div>
-</div>
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-l">Make a lasting power of attorney</h2>
-
-    <p>You can make a lasting power of attorney (LPA) online or using paper forms.</p>
-
-    <p>Either way, you need to get other people to sign the forms, including the attorneys and witnesses.</p>
-
-    <p>You can get someone else to use the online service or fill in the paper forms for you, for example a family member, friend or solicitor.</p>
-
-    <p>You must register your LPA or your attorney will not be able to make decisions for you.</p>
-
-    <div class="govuk-inset-text">
-      It takes 8 to 10 weeks to make an LPA if there are no mistakes in the application. It’s usually quicker if you make it and pay online.
+      <p style="font-size: 1rem; line-height: 1.7rem;">Contents<br>
+        — <a href="#">Overview</a><br>
+        — ...<br>
+        — Make a lasting power of attorney<br>
+        — ...
+      </p>
     </div>
+  </div>
 
-    <p>This guidance is about LPAs that will be used in England or Wales. Read about power of attorney in Scotland and power of attorney in Northern Ireland.</p>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l">Make a lasting power of attorney</h2>
 
-    <p>You do not need to live in the UK or be a British citizen. Your LPA will be legally binding only in England and Wales. For example, if you’re making a property and affairs LPA, it can only be used for your properties and assets in England and Wales.</p>
+      <p>You can make a lasting power of attorney (LPA) online or using paper forms.</p>
 
-    <h3 class="govuk-heading-m">Make an LPA online</h3>
+      <p>Either way, you need to get other people to sign the forms, including the attorneys and witnesses.</p>
 
-    <p>Create or sign in to an existing account to:</p>
+      <p>You can get someone else to use the online service or fill in the paper forms for you, for example a family member, friend or solicitor.</p>
 
-    <ul class="govuk-list govuk-list--bullet">
-      <li>make an LPA</li>
-      <li>continue making an LPA that you’ve already started</li>
-    </ul>
+      <p>You must register your LPA or your attorney will not be able to make decisions for you.</p>
 
-    <p>You can then:</p>
+      <div class="govuk-inset-text">
+        It takes 8 to 10 weeks to make an LPA if there are no mistakes in the application. It’s usually quicker if you make it and pay online.
+      </div>
 
-    <ul class="govuk-list govuk-list--bullet">
-      <li>get help and guidance at each step</li>
-      <li>save your forms and complete them later</li>
-      <li>review your answers and fix any mistakes</li>
-    </ul>
+      <p>This guidance is about LPAs that will be used in England or Wales. Read about power of attorney in Scotland and power of attorney in Northern Ireland.</p>
 
-    <p>You need to print out the forms and sign them when you’ve finished.</p>
+      <p>You do not need to live in the UK or be a British citizen. Your LPA will be legally binding only in England and Wales. For example, if you’re making a property and affairs LPA, it can only be used for your properties and assets in England and Wales.</p>
 
-    <div class="govuk-inset-text">
-      If you’ve made and registered an LPA already, there’s a different service for using an LPA.
+      <h3 class="govuk-heading-m">Make an LPA online</h3>
+
+      <p>Create or sign in to an existing account to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>make an LPA</li>
+        <li>continue making an LPA that you’ve already started</li>
+      </ul>
+
+      <p>You can then:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>get help and guidance at each step</li>
+        <li>save your forms and complete them later</li>
+        <li>review your answers and fix any mistakes</li>
+      </ul>
+
+      <p>You need to print out the forms and sign them when you’ve finished.</p>
+
+      <div class="govuk-inset-text">
+        If you’ve made and registered an LPA already, there’s a different service for using an LPA.
+      </div>
+
+      {{ govukButton({
+        text: "Start now",
+        isStartButton: true,
+        href: "home"
+      }) }}
     </div>
-    
-    {{ govukButton({
-      text: "Start now",
-      isStartButton: true,
-      href: "home"
-    }) }}
+    <div class="govuk-grid-column-one-third">
+      <hr>
+      <h3 class="govuk-heading-s">
+        <strong>Related content</strong>
+      </h3>
+      <ul class="govuk-list govuk-list--spaced">
+        <li class="govuk-body-s"><a href="#">Find out if someone has an attorney, deputy or guardian acting for them</a></li>
+        <li class="govuk-body-s"><a href="#">Report a concern about an attorney, deputy or guardian</a></li>
+        <li class="govuk-body-s"><a href="#">Manage a lasting power of attorney</a></li>
+        <li class="govuk-body-s"><a href="#">Make decisions on behalf of someone</a></li>
+      </ul>
+    </div>
   </div>
-  <div class="govuk-grid-column-one-third">
-    <hr>
-    <h3 class="govuk-heading-s">
-      <strong>Related content</strong>
-    </h3>
-    <ul class="govuk-list govuk-list--spaced">
-      <li class="govuk-body-s"><a href="#">Find out if someone has an attorney, deputy or guardian acting for them</a></li>
-      <li class="govuk-body-s"><a href="#">Report a concern about an attorney, deputy or guardian</a></li>
-      <li class="govuk-body-s"><a href="#">Manage a lasting power of attorney</a></li>
-      <li class="govuk-body-s"><a href="#">Make decisions on behalf of someone</a></li>
-    </ul>    
-  </div>
-</div>
-
 {% endblock %}

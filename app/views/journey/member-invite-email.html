@@ -5,37 +5,37 @@
 {% endblock %}
 
 {% block content %}
-<div class="email-box">
-  {{ govukSummaryList({
-    rows: [
-      {
-        key: { text: "From" },
-        value: { text: "noreply@publicguardian.gov.uk" }
-      },
-      {
-        key: { text: "Subject" },
-        value: { text: "Join My shared space on the Make an LPA service" }
-      }
-    ]
-  }) }}
+  <div class="email-box">
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: { text: "From" },
+          value: { text: "noreply@publicguardian.gov.uk" }
+        },
+        {
+          key: { text: "Subject" },
+          value: { text: "Join My shared space on the Make an LPA service" }
+        }
+      ]
+    }) }}
 
-  <p>
-    Hello,
-  </p>
-  <p>
-    (alice-moxom@example.org) has invited you to join My shared space on the Make a lasting power of attorney (LPA) service.
-  </p>
+    <p>
+      Hello,
+    </p>
+    <p>
+      (alice-moxom@example.org) has invited you to join My shared space on the Make a lasting power of attorney (LPA) service.
+    </p>
 
-  <h2 class="govuk-heading-m">How to join</h2>
-  <p>To join, log into the service (<a href="start">https://[...].opg.service.justice.gov.uk/home</a>).</p>
+    <h2 class="govuk-heading-m">How to join</h2>
+    <p>To join, log into the service (<a href="start">https://[...].opg.service.justice.gov.uk/home</a>).</p>
 
-  <p>You’ll be asked to enter your shared space access code:</p>
+    <p>You’ll be asked to enter your shared space access code:</p>
 
-  <p class="govuk-heading-xl">W7F3-GYF4</p>
+    <p class="govuk-heading-xl">W7F3-GYF4</p>
 
-  <p>This link expires in 48 hours.</p>
+    <p>This link expires in 48 hours.</p>
 
-  <p>Thanks,<br>
-    Office of the Public Guardian</p>
-</div>
+    <p>Thanks,<br>
+      Office of the Public Guardian</p>
+  </div>
 {% endblock %}
