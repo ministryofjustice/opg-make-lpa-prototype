@@ -8,7 +8,7 @@
       <h1 class="govuk-heading-xl">
         {{ pageName }}
       </h1>
-      
+
       {{ govukInput({
         classes: "govuk-input--width-20",
         label: {
@@ -22,15 +22,11 @@
           text: "Your shared space access code"
         }
       }) }}
-      
+
       {{ govukButton({
         text: "Continue",
         href: "shared-dashboard"
       }) }}
-
-      <p class="aside">
-        <em>Variant:</em> Go to <a href="cannot-join-shared-space">Cannot join shared space</a>
-      </p>
     </div>
   </div>
 {% endblock %}

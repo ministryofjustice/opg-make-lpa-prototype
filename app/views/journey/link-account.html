@@ -3,42 +3,40 @@
 {% set pageName="Link your Make account to this OneLogin account" %}
 
 {% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        {{ pageName }}
+      </h1>
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">
-      {{ pageName }}
-    </h1>
+      {{ govukInput({
+        label: {
+          text: "Email address"
+        }
+      }) }}
 
-    {{ govukInput({
-      label: {
-        text: "Email address"
-      }
-    }) }}
+      {{ govukInput({
+        label: {
+          text: "Password"
+        },
+        type: "password"
+      }) }}
+      <p style="margin-top: -1.5rem;">
+        <a href="#">Show password</a>
+      </p>
 
-    {{ govukInput({
-      label: {
-        text: "Password"
-      },
-      type: "password"
-    }) }}
-    <p style="margin-top: -1.5rem;">
-      <a href="#">Show password</a>
-    </p>
-    
-    {{ govukButton({
-      text: "Sign in",
-      href: "dashboard"
-    }) }}
+      {{ govukButton({
+        text: "Sign in",
+        href: "link-account-success"
+      }) }}
 
-    <div class="aside">
-      <p><em>Variant:</em> Go to <a href="cannot-link">Cannot link this account</a></p>
+      <div class="aside">
+        <p><em>Variant:</em> Go to <a href="cannot-link">Cannot link this account</a></p>
+      </div>
+
+      <p>
+        <a href="reset-password">Forgotten your password?</a>
+      </p>
     </div>
-
-    <p>
-      <a href="reset-password">Forgotten your password?</a>
-    </p>
   </div>
-</div>
-
 {% endblock %}

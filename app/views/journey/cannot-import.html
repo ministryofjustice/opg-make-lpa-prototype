@@ -1,16 +1,15 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Your shared space's name" %}
+{% set pageName="Cannot import" %}
 
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {% call govukPanel({
-        titleText: "52 LPAs imported"
-      }) %}
-      {% endcall %}
+      <h1 class="govuk-heading-xl">
+        {{ pageName }}
+      </h1>
 
-      <p>The account has been successully deleted.</p>
+      <p>The account you tried to import cannot be used because maybe it doesn't exist or something.</p>
 
       {{ govukButton({
         text: "Continue",
