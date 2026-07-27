@@ -6,8 +6,8 @@
     serviceUrl: "/",
     navigation: [
       {href: "#", text: "Your details"},
-      {href: "#", text: "Your LPAs", active: true},
-      {href: "shared-spaces", text: "Shared spaces"},
+      {href: "dashboard", text: "Your LPAs", active: navActive === "lpas"},
+      {href: "shared-spaces", text: "Shared spaces", active: navActive === "space"},
       {href: "#", text: "Help"},
       {href: "#", text: "Sign Out"}
     ]
