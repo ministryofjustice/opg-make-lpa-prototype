@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Cannot link account to OneLogin" %}
+{% set pageName="We cannot link this account" %}
 
 {% block content %}
   <div class="govuk-grid-row">
@@ -9,27 +9,18 @@
         {{ pageName }}
       </h1>
 
-      <p>The account you tried to link cannot be linked because either it does not exist or has already been linked to another account.</p>
+      <p> We could not link this Make account to your GOV.UK One Login. This could be because:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the account does not exist</li>
+        <li>the account has already been linked</li>
+        <li>the account has been deleted</li>
+      </ul>
+      <p>You can try again to link a different Make account, or create a new one.</p>
 
-      <form method="post" action="/redirect">
-        {{ govukRadios({
-          name: "redirect",
-          fieldset: {
-            legend: {
-              text: "Would you like to try linking again?",
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {value: "link-account", text: "Yes"},
-            {value: "dashboard", text: "No, create a Make account"}
-          ]
-        }) }}
-
-        {{ govukButton({
-          text: "Continue"
-        }) }}
-      </form>
+      {{ govukButton({
+        text: "Try again",
+        href: "link-or-create"
+      }) }}
     </div>
   </div>
 {% endblock %}
